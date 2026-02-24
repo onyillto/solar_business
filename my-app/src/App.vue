@@ -7,6 +7,7 @@
       <PricingSection />
       <WhatWeOffer />
       <ProjectsSection />
+      <TestimonialsSection />
     </main>
   </div>
 </template>
@@ -18,7 +19,7 @@ import AboutSection from './components/AboutSection.vue'
 import PricingSection from './components/Pricingsection.vue'
 import WhatWeOffer from './components/Whatweoffer.vue'
 import ProjectsSection from './components/Projectssection.vue'
-
+import TestimonialsSection from './components/TestimonialsSection.vue'
 </script>
 
 <style>

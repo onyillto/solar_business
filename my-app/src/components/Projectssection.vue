@@ -90,28 +90,28 @@ const projects = [
     title: 'Residential Borehole',
     category: 'Borehole Services',
     location: 'Port Harcourt, Nigeria',
-    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80',
+    image: '/residential.jpeg',
   },
   {
     id: 4,
     title: 'Commercial Solar Rooftop',
     category: 'Commercial Installation',
     location: 'Enugu, Nigeria',
-    image: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80',
+    image: '/commercial.jpeg',
   },
   {
     id: 5,
     title: 'Solar Street Lighting',
     category: 'Solar StreetLight',
     location: 'Ibadan, Nigeria',
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
+    image: '/street-light.jpeg',
   },
   {
     id: 6,
     title: 'Solar Panel Installation',
     category: 'Residential Installation',
     location: 'Kaduna, Nigeria',
-    image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80',
+    image: '/',
   },
 ]
 

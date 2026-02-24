@@ -17,7 +17,7 @@
       <div class="about__img-col">
         <div class="about__img-wrap">
           <img
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=700&q=80"
+            src="../../public/commercial.jpeg"
             alt="Solar panels and wind turbines"
             class="about__img"
           />
