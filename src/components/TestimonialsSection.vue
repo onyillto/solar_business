@@ -4,13 +4,9 @@
     <!-- Decorative shooting star -->
     <div class="testimonials__deco">
       <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="120" height="60">
-        <!-- Squiggly arrow path -->
         <path d="M10 45 Q25 25 40 40 Q55 55 70 35 L95 20" stroke="#F9A825" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <!-- Arrow head -->
         <path d="M88 14 L98 20 L90 28" stroke="#1565C0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <!-- Star -->
-        <polygon points="108,2 111,10 120,10 113,15 116,23 108,18 100,23 103,15 96,10 105,10"
-          fill="#F9A825"/>
+        <polygon points="108,2 111,10 120,10 113,15 116,23 108,18 100,23 103,15 96,10 105,10" fill="#F9A825"/>
       </svg>
     </div>
 
@@ -40,30 +36,32 @@
 
       <!-- Right: stacked cards -->
       <div class="testimonials__right">
-        <TransitionGroup name="card-list" tag="div" class="cards__stack">
-          <div
-            v-for="(t, i) in visibleCards"
-            :key="t.id"
-            :class="['tcard', i === 1 ? 'tcard--featured' : '']"
-          >
-            <div class="tcard__head">
-              <img :src="t.avatar" :alt="t.name" class="tcard__avatar" />
-              <div class="tcard__meta">
-                <span class="tcard__name">{{ t.name }}</span>
-                <div class="tcard__stars">
-                  <span v-for="s in 5" :key="s" class="star">★</span>
+        <div class="cards__stack">
+          <TransitionGroup name="card-slide" tag="div" class="cards__inner">
+            <div
+              v-for="(t, i) in visibleCards"
+              :key="t.id"
+              :class="['tcard', i === 1 ? 'tcard--featured' : '']"
+            >
+              <div class="tcard__head">
+                <img :src="t.avatar" :alt="t.name" class="tcard__avatar" />
+                <div class="tcard__meta">
+                  <span class="tcard__name">{{ t.name }}</span>
+                  <div class="tcard__stars">
+                    <span v-for="s in 5" :key="s" class="star">★</span>
+                  </div>
+                </div>
+                <div class="tcard__quote">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.301-3.995 5.847h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.301-3.996 5.847h3.983v10h-9.983z"/>
+                  </svg>
                 </div>
               </div>
-              <div class="tcard__quote">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.301-3.995 5.847h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.301-3.996 5.847h3.983v10h-9.983z"/>
-                </svg>
-              </div>
+              <p class="tcard__text">{{ t.text }}</p>
+              <span class="tcard__service">{{ t.service }}</span>
             </div>
-            <p class="tcard__text">{{ t.text }}</p>
-            <span class="tcard__service">{{ t.service }}</span>
-          </div>
-        </TransitionGroup>
+          </TransitionGroup>
+        </div>
       </div>
 
     </div>
@@ -260,6 +258,10 @@ onBeforeUnmount(() => {
 }
 
 .cards__stack {
+  position: relative;
+}
+
+.cards__inner {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -278,6 +280,7 @@ onBeforeUnmount(() => {
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  will-change: transform, opacity;
 }
 
 /* Featured (middle) card */
@@ -360,19 +363,31 @@ onBeforeUnmount(() => {
 }
 
 /* ── Transition animations ────────────────── */
-.card-list-enter-active,
-.card-list-leave-active {
-  transition: all 0.45s ease;
+.card-slide-enter-active,
+.card-slide-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.card-list-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
+/* Leaving card pulled out of flow so layout doesn't jump */
+.card-slide-leave-active {
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 
-.card-list-leave-to {
+.card-slide-enter-from {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(24px);
+}
+
+.card-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-24px);
+}
+
+/* FLIP: remaining cards animate smoothly into new positions */
+.card-slide-move {
+  transition: transform 0.4s ease;
 }
 
 /* ── Responsive ───────────────────────────── */
