@@ -8,6 +8,8 @@
       <WhatWeOffer />
       <ProjectsSection />
       <TestimonialsSection />
+      <Contactsection />
+      <FooterSection />
     </main>
   </div>
 </template>
@@ -20,6 +22,8 @@ import PricingSection from './components/Pricingsection.vue'
 import WhatWeOffer from './components/Whatweoffer.vue'
 import ProjectsSection from './components/Projectssection.vue'
 import TestimonialsSection from './components/TestimonialsSection.vue'
+import Contactsection from './components/Contactsection.vue'
+import FooterSection from './components/FooterSection.vue'
 </script>
 
 <style>
