@@ -2,46 +2,35 @@
   <div id="app">
     <Navbar />
     <main>
-      <HeroSection />
-      <AboutSection />
-      <PricingSection />
-      <WhatWeOffer />
-      <ProjectsSection />
-      <TestimonialsSection />
-      <Contactsection />
-      <FooterSection />
+      <router-view />
     </main>
+    <WhatsAppFloater />
   </div>
 </template>
 
 <script setup>
-import Navbar from './components/navbar.vue'
-import HeroSection from './components/Herosection.vue'
-import AboutSection from './components/AboutSection.vue'
-import PricingSection from './components/Pricingsection.vue'
-import WhatWeOffer from './components/Whatweoffer.vue'
-import ProjectsSection from './components/Projectssection.vue'
-import TestimonialsSection from './components/TestimonialsSection.vue'
-import Contactsection from './components/Contactsection.vue'
-import FooterSection from './components/FooterSection.vue'
+import Navbar from "./components/navbar.vue";
+import WhatsAppFloater from "./components/WhatsappFloater.vue";
 </script>
 
 <style>
 /* ── Global reset ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
 
 body {
-  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
-  
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
 }
 
 /* ── Root app — NO max-width, NO padding ── */

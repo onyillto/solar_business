@@ -111,7 +111,7 @@ const projects = [
     title: 'Solar Panel Installation',
     category: 'Residential Installation',
     location: 'Kaduna, Nigeria',
-    image: '/',
+    image: '/install_solar.jpeg',
   },
 ]
 

@@ -5,18 +5,18 @@
 
     <div class="nav-inner">
       <!-- Logo -->
-      <a href="#" class="logo">
+      <a href="/" class="logo">
         <img src="../../public/logo.jpeg" alt="Logo" class="logo-img" />
         <!-- <span class="logo-text">PORTFOLIO</span> -->
       </a>
 
       <!-- Nav Menu Pill -->
       <div class="nav-pill">
-        <a
+        <router-link
           v-for="item in navItems"
           :key="item.label"
-          :href="item.href"
-          @click.prevent="setActive(item.label)"
+          :to="item.href"
+          @click="setActive(item.label)"
           :class="[
             'nav-link',
             activeItem === item.label ? 'nav-link--active' : '',
@@ -34,12 +34,14 @@
             <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
           </svg>
           {{ item.label }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Right Actions -->
       <div class="nav-actions">
-        <button class="btn-contact">Let's Talk</button>
+        <button class="btn-contact" @click="$router.push('/contact')">
+          Let's Talk
+        </button>
       </div>
 
       <!-- Mobile hamburger -->
@@ -57,11 +59,11 @@
     <!-- Mobile Menu -->
     <transition name="mobile-menu">
       <div v-if="mobileOpen" class="mobile-menu">
-        <a
+        <router-link
           v-for="item in navItems"
           :key="item.label"
-          :href="item.href"
-          @click.prevent="
+          :to="item.href"
+          @click="
             setActive(item.label);
             mobileOpen = false;
           "
@@ -72,7 +74,7 @@
         >
           <span v-if="activeItem === item.label" class="mobile-dot" />
           {{ item.label }}
-        </a>
+        </router-link>
         <div class="mobile-actions">
           <button class="btn-contact btn-block">Let's Talk</button>
         </div>
@@ -84,15 +86,16 @@
 <script setup>
 import { ref } from "vue";
 
-const activeItem = ref("OUR SERVICES");
+const activeItem = ref("HOME");
 const mobileOpen = ref(false);
 
 const navItems = [
-  { label: "OUR SERVICES", href: "#services" },
-  { label: "OUR PROJECT", href: "#project" },
-  { label: "OUR TEAM", href: "#team" },
-  { label: "CONTACT US", href: "#contact" },
-  { label: "MARKET SPACE", href: "#market" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+
+  { label: "OUR SERVICE", href: "/service" },
+  { label: "PROJECTS", href: "/projects" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 function setActive(label) {
@@ -103,11 +106,11 @@ function setActive(label) {
 <style scoped>
 /* ── Variables ─────────────────────────── */
 .navbar {
-  --c-blue: #1565c0;
-  --c-blue-light: #42a5f5;
+  --c-blue: #f9a825;
+  --c-blue-light: #f9a825;
   --c-orange: #e64a19;
   --c-teal: #00897b;
-  --c-teal-light: #26c6da;
+  --c-teal-light: #f9a825;
   --c-gold: #f9a825;
 
   position: fixed;
