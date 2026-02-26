@@ -87,7 +87,7 @@ export default {
       showTooltip: true,
       userMessage: '',
       businessName: 'Support Team',
-      phoneNumber: '2348000000000', // Replace with your WhatsApp number (no + or spaces)
+      phoneNumber: '2347011136719', // Replace with your WhatsApp number (no + or spaces)
       greeting: "👋 Hello! Welcome! How can we help you today? Click send to start chatting with us on WhatsApp.",
     }
   },
