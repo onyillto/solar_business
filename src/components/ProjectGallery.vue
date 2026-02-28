@@ -89,10 +89,10 @@ export default {
           description:
             'A comprehensive fitness tracking application with workout plans, nutrition tracking, and progress analytics. Built with React Native for iOS and Android.',
           images: [
-            '/borehole.jpeg',
-            '/borehole.jpeg',
-            '/borehole.jpeg',
-            '/borehole.jpeg',
+            '/s1.jpeg',
+            '/s2.jpeg',
+            '/s3.jpeg',
+            '/s4.jpeg',
           ],
         },
         {
@@ -100,9 +100,9 @@ export default {
           description:
             'A full-stack e-commerce solution with secure payment integration, inventory management, and real-time order tracking. Designed for seamless shopping experiences.',
           images: [
-            '/residential.jpeg',
-            '/residential.jpeg',
-            '/residential.jpeg',
+            '/water4.jpeg',
+            '/water1.jpeg',
+            '/water2.jpeg',
           ],
         },
         {

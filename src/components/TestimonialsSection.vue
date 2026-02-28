@@ -44,9 +44,17 @@
               :class="['tcard', i === 1 ? 'tcard--featured' : '']"
             >
               <div class="tcard__head">
-                <img :src="t.avatar" :alt="t.name" class="tcard__avatar" />
+                <div class="tcard__logo-wrap">
+                  <img
+                    :src="t.logo"
+                    :alt="t.company"
+                    class="tcard__logo"
+                    @error="onImgError($event, t)"
+                  />
+                </div>
                 <div class="tcard__meta">
                   <span class="tcard__name">{{ t.name }}</span>
+                  <span class="tcard__company">{{ t.company }}</span>
                   <div class="tcard__stars">
                     <span v-for="s in 5" :key="s" class="star">★</span>
                   </div>
@@ -71,41 +79,54 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
+// Nigerian bank logos via wovenfinance CDN (CBN bank codes)
+const CDN = 'https://cdn.jsdelivr.net/gh/wovenfinance/cdn@main/logos'
+
 const testimonials = [
   {
     id: 1,
-    name: 'Amaka Okonkwo',
-    avatar: 'https://i.pravatar.cc/80?img=47',
-    text: 'MOSKI HUB installed our solar system and we haven\'t had a power outage since. The team was professional, fast, and very thorough. Highly recommended!',
-    service: 'Residential Solar Installation',
+    name: 'Chidi Okafor',
+    company: 'Access Bank Plc',
+    logo: `${CDN}/000014.png`,
+    fallback: 'AB',
+    text: 'MOSKI HUB powered our entire branch office with solar. No more diesel, no downtime. Our operational costs dropped significantly and the installation was done professionally.',
+    service: 'Commercial Solar Installation',
   },
   {
     id: 2,
-    name: 'Emeka Chukwu',
-    avatar: 'https://i.pravatar.cc/80?img=11',
-    text: 'Our borehole is the best investment we\'ve ever made. Clean water 24/7, no generator noise, and the construction was top quality from start to finish.',
-    service: 'Borehole Services',
+    name: 'Ngozi Adeyemi',
+    company: 'Guaranty Trust Bank',
+    logo: `${CDN}/000013.png`,
+    fallback: 'GT',
+    text: 'We outfitted our Lagos headquarters with a solar hybrid system. MOSKI HUB handled everything from design to commissioning. Our energy bills are now virtually zero.',
+    service: 'Hybrid Solar System',
   },
   {
     id: 3,
-    name: 'Fatima Al-Hassan',
-    avatar: 'https://i.pravatar.cc/80?img=45',
-    text: 'The smart home setup is incredible. I control everything from my phone — lights, security cameras, and gate — even when I\'m in another country!',
-    service: 'Smart Home Setup',
+    name: 'Emeka Eze',
+    company: 'Zenith Bank Plc',
+    logo: `${CDN}/000015.png`,
+    fallback: 'ZB',
+    text: 'MOSKI HUB installed solar street lights across our estate and smart security systems in our data centre. The team was excellent, delivering on time and within budget.',
+    service: 'Solar Street Lighting & Smart Security',
   },
   {
     id: 4,
-    name: 'Chidi Osei',
-    avatar: 'https://i.pravatar.cc/80?img=15',
-    text: 'Our factory runs entirely on solar now. The savings on diesel and electricity are massive. MOSKI HUB delivered beyond our expectations.',
-    service: 'Commercial Installation',
+    name: 'Fatima Musa',
+    company: 'United Bank for Africa',
+    logo: `${CDN}/000004.png`,
+    fallback: 'UBA',
+    text: 'Our borehole water project by MOSKI HUB has transformed operations at our Abuja complex. Clean, uninterrupted water supply and a solar pump — brilliant investment.',
+    service: 'Borehole & Solar Pump',
   },
   {
     id: 5,
-    name: 'Ngozi Adeyemi',
-    avatar: 'https://i.pravatar.cc/80?img=49',
-    text: 'The solar street lights in our estate are brilliant. No more dark nights and we pay nothing on electricity for them. Great value for the estate.',
-    service: 'Solar Street Lighting',
+    name: 'Tunde Adewale',
+    company: 'First Bank of Nigeria',
+    logo: `${CDN}/000016.png`,
+    fallback: 'FBN',
+    text: 'From the smart home setup in our executive lounge to solar backup for our server room, MOSKI HUB delivered top-tier quality. We will definitely work with them again.',
+    service: 'Smart Home & Solar Backup',
   },
 ]
 
@@ -123,6 +144,15 @@ const visibleCards = computed(() => {
     testimonials[next],
   ]
 })
+
+function onImgError(event, t) {
+  // Replace broken logo with a styled text fallback
+  const el = event.target
+  el.style.display = 'none'
+  const parent = el.parentElement
+  parent.setAttribute('data-fallback', t.fallback)
+  parent.classList.add('logo-fallback')
+}
 
 function goTo(i) {
   activeIndex.value = i
@@ -298,35 +328,63 @@ onBeforeUnmount(() => {
   gap: 12px;
 }
 
-.tcard__avatar {
+/* ── Logo wrapper ─────────────────────────── */
+.tcard__logo-wrap {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  border: 2px solid #f0f0f0;
+  overflow: hidden;
 }
 
-.tcard--featured .tcard__avatar {
+.tcard--featured .tcard__logo-wrap {
   border-color: #F9A825;
+}
+
+.tcard__logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* Fallback text badge when logo fails */
+.tcard__logo-wrap.logo-fallback::after {
+  content: attr(data-fallback);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #E64A19;
+  letter-spacing: 0.05em;
 }
 
 .tcard__meta {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 1px;
 }
 
 .tcard__name {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #111827;
+  line-height: 1.2;
+}
+
+.tcard__company {
+  font-size: 0.72rem;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .tcard__stars {
   display: flex;
   gap: 1px;
+  margin-top: 2px;
 }
 
 .star {
@@ -368,7 +426,6 @@ onBeforeUnmount(() => {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Leaving card pulled out of flow so layout doesn't jump */
 .card-slide-leave-active {
   position: absolute;
   width: 100%;
@@ -385,7 +442,6 @@ onBeforeUnmount(() => {
   transform: translateY(-24px);
 }
 
-/* FLIP: remaining cards animate smoothly into new positions */
 .card-slide-move {
   transition: transform 0.4s ease;
 }

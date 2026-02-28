@@ -4,7 +4,7 @@ import AboutPage from "./pages/AboutPage.vue";
 import ContactPage from "./pages/ContactPage.vue";
 import PricingPage from "./pages/PricingPage.vue";
 import ProjectsPage from "./pages/ProjectsPage.vue";
-
+import MarketPlacePage from "./pages/MarketPlacePage.vue";
 const routes = [
   { path: "/", component: HomePage },
   { path: "/about", component: AboutPage },
@@ -23,6 +23,10 @@ const routes = [
     path: "/footer",
     component: () => import("./components/FooterSection.vue"),
   },
+  {
+    path: "/market",
+    component: MarketPlacePage
+  }
 ];
 
 const router = createRouter({

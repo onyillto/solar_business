@@ -3,8 +3,8 @@
     <div class="services__header">
       <h2 class="services__title">Our services</h2>
       <p class="services__subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit <br />
-        varius rhoncus, nullam pulvinar ut sollicitudin dictumst porttitor.
+        Discover our comprehensive solutions tailored to your needs, <br />
+spanning from smart home automation and innovative solar technology to  <br /> water heating and all forms of sustainable construction. 
       </p>
       <!-- <div class="services__btns">
         <button class="btn btn--primary">Get a quote</button>

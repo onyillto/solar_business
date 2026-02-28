@@ -96,6 +96,7 @@ const navItems = [
   { label: "OUR SERVICE", href: "/service" },
   { label: "PROJECTS", href: "/projects" },
   { label: "CONTACT", href: "/contact" },
+  { label: "MARKET PLACE", href: "/market" },
 ];
 
 function setActive(label) {
