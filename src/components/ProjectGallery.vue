@@ -80,8 +80,8 @@ export default {
             'Integration of intelligent home automation systems that optimize energy usage, security, and climate control for a modern living experience.',
           images: [
             '/residential.jpeg',
-            '/residential.jpeg',
-            '/residential.jpeg',
+            '/solarhouse.jpeg',
+            '/okay.jpeg',
           ],
         },
         {
@@ -91,7 +91,7 @@ export default {
           images: [
             '/s1.jpeg',
             '/s2.jpeg',
-            '/s3.jpeg',
+            '/smart01.jpeg',
             '/s4.jpeg',
           ],
         },
@@ -100,7 +100,7 @@ export default {
           description:
             'Sustainable water solutions featuring professional drilling, pump installation, and filtration systems for reliable domestic water supply.',
           images: [
-            '/water4.jpeg',
+            '/waterr.jpeg',
             '/water1.jpeg',
             '/water2.jpeg',
           ],
