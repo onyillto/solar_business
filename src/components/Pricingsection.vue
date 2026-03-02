@@ -1,24 +1,31 @@
 <template>
   <section class="pricing">
-
     <!-- Section header -->
     <div class="pricing__header">
       <p class="pricing__eyebrow">Our Service Plans</p>
-      <h2 class="pricing__title">
+      <!-- <h2 class="pricing__title">
         Affordable &amp; Transparent Pricing for<br />Every Energy Need
-      </h2>
+      </h2> -->
     </div>
 
     <!-- Cards grid -->
     <div class="pricing__grid">
-
       <!-- Card 1: BOREHOLE -->
       <div class="card card--basic">
         <div class="card__top">
-          <div class="card__badge">Borehole</div>
+          <div class="card__badge">Basic Engineering</div>
           <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="22"
+              height="22"
+            >
+              <path
+                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+              />
             </svg>
           </div>
         </div>
@@ -28,7 +35,8 @@
           <span class="price__per">Per Panel</span>
         </div> -->
         <p class="card__desc">
-          Complete borehole services from consultation to water bank construction, ensuring clean water access for your property.
+          Comprehensive engineering solutions including cabin homes, gazebos,
+          water systems, pools, and general construction services.
         </p>
         <button class="card__btn">
           Get Started
@@ -45,10 +53,17 @@
       <!-- Card 2: SMART SETUP (featured) -->
       <div class="card card--featured">
         <div class="card__top">
-          <div class="card__badge card__badge--featured">Smart Setup</div>
+          <div class="card__badge card__badge--featured">Smart Home</div>
           <div class="card__icon card__icon--featured">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="22"
+              height="22"
+            >
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
           </div>
         </div>
@@ -58,7 +73,8 @@
           <span class="price__per">Per Panel</span>
         </div> -->
         <p class="card__desc">
-          Full smart home setup with intelligent security, gadgets, control, installations, and 24/7 remote monitoring.
+          Advanced smart home integration covering security, gadgets, CCTV, and
+          network installations for modern living.
         </p>
         <button class="card__btn card__btn--featured">
           Get Started
@@ -75,13 +91,20 @@
       <!-- Card 3: SOLAR -->
       <div class="card card--premium">
         <div class="card__top">
-          <div class="card__badge">Solar</div>
+          <div class="card__badge">Solar Panels</div>
           <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
-              <rect x="2" y="7" width="20" height="14" rx="2"/>
-              <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-              <line x1="12" y1="12" x2="12" y2="16"/>
-              <line x1="10" y1="14" x2="14" y2="14"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="22"
+              height="22"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+              <line x1="12" y1="12" x2="12" y2="16" />
+              <line x1="10" y1="14" x2="14" y2="14" />
             </svg>
           </div>
         </div>
@@ -91,7 +114,8 @@
           <span class="price__per">Per Panel</span>
         </div> -->
         <p class="card__desc">
-          Full solar ecosystem — domestic, industrial, street lighting, powered pumps, smart meters, battery banks, and storage.
+          Complete solar energy solutions including inverters, street lights,
+          pumps, water heaters, and industrial installations.
         </p>
         <button class="card__btn">
           Get Started
@@ -104,40 +128,42 @@
           </li>
         </ul>
       </div>
-
     </div>
   </section>
 </template>
 
 <script setup>
 const boreholeFeatures = [
-  'Consultation',
-  'Survey',
-  'Borehole Drilling',
-  'Stanchion Fabrication',
-  'Water Bank Construction',
-]
+  "Cabin and capsule home",
+  "Gazebo",
+  "Stanchion and water tank construction",
+  "Carport",
+  "Borehole survey",
+  "Borehole drilling",
+  "Swimming pools",
+  "Water fountains",
+];
 
 const smartFeatures = [
-  'Smart Home',
-  'Smart Security',
-  'Smart Gadget',
-  'Smart Control',
-  'Smart Installations',
-  '24/7 Remote Monitoring',
-]
+  "Smart home",
+  "Smart security",
+  "Smart gadgets",
+  "Smart installations and monitoring service",
+  "Smart CCTV cameras",
+  "Networks installations",
+];
 
 const solarFeatures = [
-  'Domestic & Industrial Solars',
-  'Solar StreetLight',
-  'Solar Powered Pumps',
-  'Solar Charging Station',
-  'Remote Support',
-  'Solar Powered Device',
-  'Smart Meter',
-  'Battery Banks',
-  'Solar Storage',
-]
+  "Inverter",
+  "Solar StreetLight",
+  "Solar Powered Pumps",
+  "Solar Charging Station",
+  "Solar water heater",
+  "Solar Powered Device",
+  "Smart Metering",
+  "Battery Bank",
+  "Industrial and domestic installations",
+];
 </script>
 
 <style scoped>
@@ -146,7 +172,7 @@ const solarFeatures = [
   width: 100%;
   background: #f8f9fa;
   padding: 90px 2rem;
-  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
 }
 
 /* ── Header ───────────────────────────────── */
@@ -160,12 +186,12 @@ const solarFeatures = [
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #F9A825;
+  color: #f9a825;
   margin-bottom: 0.8rem;
 }
 
 .pricing__title {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: "Georgia", "Times New Roman", serif;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 700;
   color: #111827;
@@ -224,7 +250,7 @@ const solarFeatures = [
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #9ca3af;
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.07);
   padding: 4px 12px;
   border-radius: 999px;
 }
@@ -240,7 +266,7 @@ const solarFeatures = [
   border-radius: 10px;
   background: rgba(249, 168, 37, 0.12);
   border: 1px solid rgba(249, 168, 37, 0.25);
-  color: #F9A825;
+  color: #f9a825;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +294,7 @@ const solarFeatures = [
 }
 
 .price__amount {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 3rem;
   font-weight: 700;
   color: #ffffff;
@@ -298,10 +324,10 @@ const solarFeatures = [
   justify-content: space-between;
   width: 100%;
   background: #1f2937;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 13px 16px;
-  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   color: #ffffff;
@@ -311,7 +337,7 @@ const solarFeatures = [
 
 .card__btn:hover {
   background: #374151;
-  border-color: #F9A825;
+  border-color: #f9a825;
 }
 
 .card__btn--featured {
@@ -330,7 +356,7 @@ const solarFeatures = [
   height: 30px;
   border-radius: 8px;
   background: rgba(249, 168, 37, 0.15);
-  color: #F9A825;
+  color: #f9a825;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -339,7 +365,7 @@ const solarFeatures = [
 }
 
 .card__btn--featured .btn__arrow {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 
@@ -350,7 +376,7 @@ const solarFeatures = [
   flex-direction: column;
   gap: 10px;
   padding-top: 0.4rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .card__features li {
@@ -367,7 +393,7 @@ const solarFeatures = [
   height: 20px;
   border-radius: 50%;
   background: rgba(249, 168, 37, 0.12);
-  color: #F9A825;
+  color: #f9a825;
   font-size: 0.65rem;
   font-weight: 700;
   display: flex;
@@ -398,6 +424,8 @@ const solarFeatures = [
 }
 
 @media (max-width: 480px) {
-  .pricing { padding: 60px 1.2rem; }
+  .pricing {
+    padding: 60px 1.2rem;
+  }
 }
 </style>

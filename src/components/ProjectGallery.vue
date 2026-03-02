@@ -75,7 +75,7 @@ export default {
       currentImage: 0,
       projects: [
         {
-          title: 'Industrial Solar Farm',
+          title: 'Smart Homes',
           description:
             'A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, dark mode support, and an intuitive user interface.',
           images: [
@@ -116,7 +116,7 @@ export default {
           ],
         },
         {
-          title: 'Solar Street Lighting',
+          title: 'Basic engineering services',
           description:
             'An innovative AI-powered tool that generates high-quality content for blogs, social media, and marketing campaigns using advanced language models.',
           images: [
@@ -126,7 +126,7 @@ export default {
           ],
         },
         {
-          title: 'Solar Panel Installation',
+          title: 'Solar panels',
           description:
             'A centralized platform for managing multiple social media accounts, scheduling posts, and tracking engagement analytics across all channels.',
           images: [

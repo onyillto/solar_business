@@ -216,10 +216,7 @@
     </div>
 
     <!-- Bottom CTA -->
-    <div class="marketplace__cta">
-      <p>Need a custom plan for your business?</p>
-      <button class="marketplace__cta-btn">Talk to an Expert &rarr;</button>
-    </div>
+   
 
     <!-- MODAL -->
     <Teleport to="body">
@@ -360,9 +357,12 @@ function closeModal() {
 
 function openWhatsapp(plan) {
   const phone = "07011136719"; // Replace with your actual WhatsApp number
-  const text = `Hello, I am interested in the ${plan.name} (${
-    plan.wattage
-  }) plan priced at ₦${plan.price.toLocaleString()}.`;
+  let text = `Hello, I am interested in the ${plan.name} (${plan.wattage}) plan`;
+  if (plan.price > 0) {
+    text += ` priced at ₦${plan.price.toLocaleString()}.`;
+  } else {
+    text += `.`;
+  }
   window.open(
     `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
     "_blank"
@@ -372,116 +372,124 @@ function openWhatsapp(plan) {
 const plans = [
   {
     id: 1,
-    wattage: "200W",
-    name: "Solar Generator Without Panels",
+    wattage: "Smart",
+    name: "Smart Home",
     panels: false,
-    badge: null,
-    price: 21000,
-    image: "/solar.jpeg",
+    badge: "Automation",
+    price: 0,
+    image: "/smarthome.jpeg",
     description:
-      "The perfect starter solar solution for apartments and small homes. This 200W portable solar generator gives you reliable battery-backed power without the need for solar panels — ideal for areas with NEPA supply that needs topping up, or as a clean backup for your essentials.",
-    // specs: [
-    //   { label: 'Capacity', value: '200W' },
-    //   { label: 'Battery Type', value: 'Lithium-Ion' },
-    //   { label: 'Output', value: 'Pure Sine Wave' },
-    //   { label: 'Charge Time', value: '4–6 hrs' },
-    //   { label: 'Runtime', value: 'Up to 8 hrs' },
-    //   { label: 'Warranty', value: '2 Years' },
-    // ],
-    // features: ['200W portable generator', 'Battery backup included', 'Plug & play setup', '24/7 support'],
-    // fullFeatures: [
-    //   { label: '200W Portable Generator', detail: 'Lightweight, easy to move between rooms' },
-    //   { label: 'Lithium Battery Backup', detail: 'Long cycle life, no memory effect' },
-    //   { label: 'Plug & Play Setup', detail: 'No electrician needed, ready in minutes' },
-    //   { label: 'LED Charge Indicator', detail: 'Know your battery level at a glance' },
-    //   { label: 'Overload Protection', detail: 'Auto cut-off to protect your appliances' },
-    //   { label: '24/7 Customer Support', detail: 'Phone, WhatsApp and in-person support' },
-    // ],
+      "Experience the future of living with our comprehensive smart home solutions. From security to convenience, we integrate technology seamlessly into your daily life.",
+    features: [
+      "Smart home",
+      "Smart security",
+      "Smart gadgets",
+      "Smart installations and monitoring service",
+      "Smart CCTV cameras",
+      "Networks installations",
+    ],
+    fullFeatures: [
+      { label: "Smart home", detail: "Complete home automation integration" },
+      {
+        label: "Smart security",
+        detail: "Advanced security systems for peace of mind",
+      },
+      { label: "Smart gadgets", detail: "Integration of latest smart devices" },
+      {
+        label: "Smart installations",
+        detail: "Professional setup and monitoring service",
+      },
+      {
+        label: "Smart CCTV cameras",
+        detail: "High-definition surveillance systems",
+      },
+      {
+        label: "Networks installations",
+        detail: "Robust home networking solutions",
+      },
+    ],
   },
   {
     id: 2,
-    wattage: "200W",
-    name: "Solar Generator + Panels",
-    panels: true,
-    badge: "Popular",
-    price: 25000,
-    image: "solar2.jpeg",
+    wattage: "Civil",
+    name: "Basic Engineering Services",
+    panels: false,
+    badge: "Engineering",
+    price: 0,
+    image: "/borehole.jpg",
     description:
-      "Our most popular starter bundle. The 200W Solar Generator + Panels combo gives you everything needed to run independently of the grid. The solar panel charges your generator for free every day using sunlight — so your monthly bill stays flat no matter how long NEPA stays away.",
-    // specs: [
-    //   { label: 'Capacity', value: '200W' },
-    //   { label: 'Panel Type', value: 'Monocrystalline' },
-    //   { label: 'Battery Type', value: 'Lithium-Ion' },
-    //   { label: 'Charge Time', value: '3–5 hrs (solar)' },
-    //   { label: 'Runtime', value: 'Up to 10 hrs' },
-    //   { label: 'Warranty', value: '2 Years' },
-    // ],
-    // features: ['200W solar panels', 'Generator + battery', 'Professional install', '24/7 support'],
-    // fullFeatures: [
-    //   { label: '200W Monocrystalline Panel', detail: 'High-efficiency, weather-resistant frame' },
-    //   { label: 'Solar Generator + Battery', detail: 'Seamless charge from panel to storage' },
-    //   { label: 'Professional Installation', detail: 'Certified engineers handle everything' },
-    //   { label: 'Roof/Wall Mounting', detail: 'Adjustable bracket for optimal angle' },
-    //   { label: 'App Monitoring', detail: 'Track usage and charge via mobile app' },
-    //   { label: '24/7 Customer Support', detail: 'Phone, WhatsApp and in-person support' },
-    // ],
+      "Our basic engineering services cover a wide range of construction and installation needs, ensuring quality and durability for your property.",
+    features: [
+      "Cabin and capsule home",
+      "Gazebo",
+      "Stanchion and water tank construction",
+      "Carport",
+      "Borehole survey",
+      "Borehole drilling",
+      "Swimming pools",
+      "Water fountains",
+    ],
+    fullFeatures: [
+      {
+        label: "Cabin and capsule home",
+        detail: "Modern compact living solutions",
+      },
+      { label: "Gazebo", detail: "Outdoor relaxation structures" },
+      {
+        label: "Stanchion & water tank",
+        detail: "Reliable water storage construction",
+      },
+      { label: "Carport", detail: "Protective vehicle shelters" },
+      { label: "Borehole survey", detail: "Professional site assessment" },
+      { label: "Borehole drilling", detail: "Deep water access drilling" },
+      {
+        label: "Swimming pools",
+        detail: "Custom pool design and construction",
+      },
+      { label: "Water fountains", detail: "Decorative water features" },
+    ],
   },
   {
     id: 3,
-    wattage: "1.5KVA",
-    name: "Solar Generator Without Panels",
-    panels: false,
-    badge: null,
-    price: 44000,
-    image: "/i3.jpeg",
-    description:
-      "Power your entire home or small business with the 1.5KVA Solar Generator. This heavy-duty system handles refrigerators, fans, TVs, lighting, and even small ACs without breaking a sweat. Ideal for families and SMEs that need serious, uninterrupted power day and night.",
-    // specs: [
-    //   { label: 'Capacity', value: '1.5KVA' },
-    //   { label: 'Battery Type', value: 'Deep Cycle AGM' },
-    //   { label: 'Output', value: 'Pure Sine Wave' },
-    //   { label: 'Charge Time', value: '5–8 hrs' },
-    //   { label: 'Runtime', value: 'Up to 12 hrs' },
-    //   { label: 'Warranty', value: '3 Years' },
-    // ],
-    // features: ['1.5KVA pure sine wave', 'Heavy-duty battery', 'Powers appliances', '24/7 support'],
-    // fullFeatures: [
-    //   { label: '1.5KVA Pure Sine Wave', detail: 'Safe for sensitive electronics and motors' },
-    //   { label: 'Heavy-Duty Deep Cycle Battery', detail: 'Designed for daily deep discharge cycles' },
-    //   { label: 'Runs Major Appliances', detail: 'Fridge, fan, TV, lighting, small AC' },
-    //   { label: 'Automatic Transfer Switch', detail: 'Switches to backup instantly on outage' },
-    //   { label: 'LCD Status Display', detail: 'Real-time voltage, load, and battery info' },
-    //   { label: '24/7 Priority Support', detail: 'Dedicated technician on call for you' },
-    // ],
-  },
-  {
-    id: 4,
-    wattage: "1.5KVA",
-    name: "Solar Generator + Panels",
+    wattage: "Solar",
+    name: "Solar Panels",
     panels: true,
-    badge: "Best Value",
-    price: 64000,
-    image:
-      "/solar2.jpeg",
+    badge: "Renewable",
+    price: 0,
+    image: "/commercial.jpeg",
     description:
-      "The ultimate solar independence package. The 1.5KVA Solar Generator + Panels system provides full energy autonomy for your home or business. With high-efficiency solar panels topping up your battery daily, your only cost is this flat monthly lease — no more fuel, no NEPA bills, no surprises.",
-    // specs: [
-    //   { label: 'Capacity', value: '1.5KVA' },
-    //   { label: 'Panel Type', value: 'Monocrystalline Hi-Eff' },
-    //   { label: 'Battery Type', value: 'LiFePO4' },
-    //   { label: 'Charge Time', value: '4–6 hrs (solar)' },
-    //   { label: 'Runtime', value: 'Up to 16 hrs' },
-    //   { label: 'Warranty', value: '5 Years' },
-    // ],
-    // features: ['1.5KVA full system', 'High-efficiency panels', 'Complete installation', 'Priority support'],
-    // fullFeatures: [
-    //   { label: '1.5KVA Full Solar System', detail: 'Panels, inverter, battery — all matched' },
-    //   { label: 'LiFePO4 Battery Pack', detail: '10-year lifespan, safest battery chemistry' },
-    //   { label: 'High-Efficiency Panels', detail: '22%+ efficiency even in cloudy weather' },
-    //   { label: 'Full Professional Install', detail: 'Roof survey, mounting, wiring, testing' },
-    //   { label: 'Smart Energy Management', detail: 'Optimised charge and discharge cycles' },
-    //   { label: 'Priority 24/7 Support', detail: 'Same-day technician dispatch guaranteed' },
-    // ],
+      "Harness the power of the sun with our extensive range of solar products and installation services for both industrial and domestic needs.",
+    features: [
+      "Inverter",
+      "Solar StreetLight",
+      "Solar Powered Pumps",
+      "Solar Charging Station",
+      "Solar water heater",
+      "Solar Powered Device",
+      "Smart Metering",
+      "Battery Bank",
+      "Industrial and domestic installations",
+    ],
+    fullFeatures: [
+      { label: "Inverter", detail: "Efficient power conversion systems" },
+      { label: "Solar StreetLight", detail: "Sustainable outdoor lighting" },
+      {
+        label: "Solar Powered Pumps",
+        detail: "Reliable water pumping solutions",
+      },
+      {
+        label: "Solar Charging Station",
+        detail: "Charging for EVs and devices",
+      },
+      { label: "Solar water heater", detail: "Eco-friendly water heating" },
+      {
+        label: "Solar Powered Device",
+        detail: "Various solar-enabled gadgets",
+      },
+      { label: "Smart Metering", detail: "Precise energy usage monitoring" },
+      { label: "Battery Bank", detail: "High-capacity energy storage" },
+      { label: "Installations", detail: "Industrial and domestic setups" },
+    ],
   },
 ];
 </script>
