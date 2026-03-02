@@ -9,10 +9,10 @@
         Our <span class="theme-text">Expertise</span>
       </h2>
       <div class="header-divider"></div>
-      <p class="services-subtitle">
+      <!-- <p class="services-subtitle">
         We provide cutting-edge solutions tailored to Nigeria's unique environment, 
         ensuring reliability, efficiency, and long-term sustainability.
-      </p>
+      </p> -->
     </div>
 
 

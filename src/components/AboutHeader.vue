@@ -17,10 +17,10 @@
         <span class="title-highlight">Future of Nigeria</span>
       </h1>
       
-      <p class="header-subtitle">
+      <!-- <p class="header-subtitle">
         Dedicated to providing sustainable energy and clean water solutions. 
         Learn how we're building a greener tomorrow through innovation and engineering.
-      </p>
+      </p> -->
 
       <div class="scroll-hint">
         <div class="scroll-dot"></div>

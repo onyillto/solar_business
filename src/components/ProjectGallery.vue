@@ -77,7 +77,7 @@ export default {
         {
           title: 'Smart Homes',
           description:
-            'A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, dark mode support, and an intuitive user interface.',
+            'Integration of intelligent home automation systems that optimize energy usage, security, and climate control for a modern living experience.',
           images: [
             '/residential.jpeg',
             '/residential.jpeg',
@@ -87,7 +87,7 @@ export default {
         {
           title: 'Smart Home Automation',
           description:
-            'A comprehensive fitness tracking application with workout plans, nutrition tracking, and progress analytics. Built with React Native for iOS and Android.',
+            'Advanced control systems for residential properties, allowing users to manage lighting, appliances, and security remotely via mobile devices.',
           images: [
             '/s1.jpeg',
             '/s2.jpeg',
@@ -96,43 +96,35 @@ export default {
           ],
         },
         {
-          title: 'Residential Borehole',
+          title: 'Communial Borehole',
           description:
-            'A full-stack e-commerce solution with secure payment integration, inventory management, and real-time order tracking. Designed for seamless shopping experiences.',
+            'Sustainable water solutions featuring professional drilling, pump installation, and filtration systems for reliable domestic water supply.',
           images: [
             '/water4.jpeg',
             '/water1.jpeg',
             '/water2.jpeg',
           ],
         },
-        {
-          title: 'Commercial Solar Rooftop',
-          description:
-            'An interactive data visualization dashboard with real-time metrics, customizable widgets, and exportable reports for business intelligence.',
-          images: [
-            '/commercial.jpeg',
-            '/commercial.jpeg',
-            '/commercial.jpeg',
-          ],
-        },
+
         {
           title: 'Basic engineering services',
           description:
-            'An innovative AI-powered tool that generates high-quality content for blogs, social media, and marketing campaigns using advanced language models.',
+            'Comprehensive technical support including system design, street lighting installation, and structural engineering for infrastructure projects.',
           images: [
-            '/street-light.jpeg',
-            '/street-light.jpeg',
-            '/street-light.jpeg',
+            '/i2.jpeg',
+            '/home.jpeg',
+            '/i3.jpeg',
           ],
         },
         {
           title: 'Solar panels',
           description:
-            'A centralized platform for managing multiple social media accounts, scheduling posts, and tracking engagement analytics across all channels.',
+            'High-efficiency photovoltaic panel installations and maintenance services tailored to maximize energy harvest for residential and industrial use.',
           images: [
             '/install_solar.jpeg',
-            '/install_solar.jpeg',
-            '/install_solar.jpeg',
+            '/solar2.jpeg',
+            '/sol3.jpeg',
+
           ],
         },
       ],
