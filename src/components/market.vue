@@ -356,7 +356,7 @@ function closeModal() {
 }
 
 function openWhatsapp(plan) {
-  const phone = "07011136719"; // Replace with your actual WhatsApp number
+  const phone = "08066377299"; // Replace with your actual WhatsApp number
   let text = `Hello, I am interested in the ${plan.name} (${plan.wattage}) plan`;
   if (plan.price > 0) {
     text += ` priced at ₦${plan.price.toLocaleString()}.`;
