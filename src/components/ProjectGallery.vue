@@ -121,9 +121,9 @@ export default {
           description:
             'High-efficiency photovoltaic panel installations and maintenance services tailored to maximize energy harvest for residential and industrial use.',
           images: [
-            '/install_solar.jpeg',
+            '/mo.jpeg',
             '/solar2.jpeg',
-            '/sol3.jpeg',
+            '/mo2.jpeg',
 
           ],
         },
