@@ -24,7 +24,7 @@
       <div class="about__img-col">
         <div class="about__img-wrap">
           <img
-            src="../../public/commercial.jpeg"
+            src="../../public/mo.jpeg"
             alt="Solar panels and wind turbines"
             class="about__img"
           />

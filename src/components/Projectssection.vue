@@ -76,7 +76,7 @@ const projects = [
     title: 'Industrial Solar Farm',
     category: 'Solar Installation',
     location: 'Lagos, Nigeria',
-    image: '/residential.jpeg',
+    image: '/mo1.jpeg',
   },
   {
     id: 2,
@@ -111,7 +111,7 @@ const projects = [
     title: 'Solar Panel Installation',
     category: 'Residential Installation',
     location: 'Kaduna, Nigeria',
-    image: '/install_solar.jpeg',
+    image: '/mo2.jpeg',
   },
 ]
 
