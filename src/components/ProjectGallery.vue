@@ -126,7 +126,16 @@ export default {
             '/mo2.jpeg',
 
           ],
+          
         },
+          {
+            title: 'Smart Inverter Setup',
+            description: 'Intelligent inverters for efficient solar-to-power conversion and dependable energy storage.',
+            images: [
+              '/con.jpeg',
+              '/co.jpeg',
+              '/cons.jpeg',
+            ],}
       ],
     }
   },
